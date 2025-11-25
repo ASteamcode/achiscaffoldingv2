@@ -372,6 +372,67 @@
         </div>
     </div>
 </section>
+<section class="home-section home-testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2>What Our Clients Say About Us</h2>
+      <p>We are grateful for the trust our clients place in us.</p>
+    </div>
+
+    <div class="testimonials-wrapper">
+
+      <button class="testimonial-arrow prev">&#10094;</button>
+      <button class="testimonial-arrow next">&#10095;</button>
+
+      <div class="testimonials-track">
+        
+        <!-- CARD 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-img">
+            <img src="/mnt/data/782df518-707e-4b82-9ca2-7c2119dc3f0a.png" alt="Client photo">
+          </div>
+          <h3 class="testimonial-name">Hala Yassine</h3>
+          <p class="testimonial-role">Marketing Coordinator</p>
+          <p class="testimonial-text">
+            “Amazing service! The team was very responsive and professional.  
+            Our project came out even better than expected.”
+          </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-img">
+            <img src="/mnt/data/782df518-707e-4b82-9ca2-7c2119dc3f0a.png" alt="Client photo">
+          </div>
+          <h3 class="testimonial-name">Rami Haddad</h3>
+          <p class="testimonial-role">Business Owner</p>
+          <p class="testimonial-text">
+            “Great communication and excellent work.  
+            They understand exactly what the client needs.”
+          </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-img">
+            <img src="/mnt/data/782df518-707e-4b82-9ca2-7c2119dc3f0a.png" alt="Client photo">
+          </div>
+          <h3 class="testimonial-name">Maya Nasr</h3>
+          <p class="testimonial-role">HR Specialist</p>
+          <p class="testimonial-text">
+            “Professional, creative, and very efficient.  
+            I highly recommend working with them.”
+          </p>
+        </div>
+
+      </div>
+
+      <!-- DOTS -->
+      <div class="testimonial-dots"></div>
+
+    </div>
+  </div>
+</section>
 
 <section class="home-section home-blog">
     <div class="container">
@@ -515,5 +576,42 @@
 <script src="js/menu.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/clients-slider.js"></script>
+<script>
+const track = document.querySelector('.testimonials-track');
+const cards = Array.from(document.querySelectorAll('.testimonial-card'));
+const dotsContainer = document.querySelector('.testimonial-dots');
+
+let index = 0;
+
+// Create dots
+cards.forEach((_, i) => {
+  const dot = document.createElement("div");
+  dot.classList.add("dot");
+  if (i === 0) dot.classList.add("active");
+  dot.addEventListener("click", () => goTo(i));
+  dotsContainer.appendChild(dot);
+});
+
+const dots = Array.from(document.querySelectorAll(".testimonial-dots .dot"));
+
+function goTo(i) {
+  index = i;
+  track.style.transform = `translateX(-${index * (cards[0].offsetWidth + 24)}px)`;
+
+  dots.forEach(d => d.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+document.querySelector('.testimonial-arrow.prev').onclick = () => {
+  index = index <= 0 ? cards.length - 1 : index - 1;
+  goTo(index);
+};
+
+document.querySelector('.testimonial-arrow.next').onclick = () => {
+  index = index >= cards.length - 1 ? 0 : index + 1;
+  goTo(index);
+};
+</script>
+
 </body>
 </html>
