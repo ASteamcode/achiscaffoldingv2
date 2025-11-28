@@ -331,6 +331,20 @@
     box-shadow: 0 25px 60px rgba(0,0,0,.12);
     padding: 45px 45px 55px;
 }
+
+
+.testi-prev {
+    left: 10px;
+}
+
+.testi-next {
+    right: 10px;
+}
+.testimonial-item.center .testimonial-quote-circle {
+    opacity: 1 !important;
+}
+
+
 /* ===========================
    BLOG
    =========================== */
@@ -684,5 +698,111 @@
     }
     .services-grid {
         grid-template-columns: 1fr;
+    }
+}
+/* FIX CENTER CARD SIZE & QUOTE VISIBILITY */
+.testimonial-item.center {
+    transform: translateY(-25px) scale(1.04);
+}
+
+.testimonial-item .testimonial-card {
+    min-height: 180px; /* reduced */
+    padding: 30px 28px 40px;
+}
+
+.testimonial-item.center .testimonial-card {
+    padding: 32px 30px 42px;
+}
+
+/* ensure quotation mark remains visible */
+.testimonial-item.center .testimonial-quote-circle {
+    opacity: 1 !important;
+    transform: scale(1.0);
+}
+
+/* FIX QUOTE POSITION */
+.testimonial-quote-circle {
+    margin: -40px auto 15px; /* lifted up + smaller bottom space */
+}
+
+/* PREVENT HUGE EMPTY SPACE */
+.testimonial-text {
+    line-height: 1.45;
+    font-size: 14px;
+}
+.testimonial-quote-circle {
+    background: #ffffff;
+    color: #003a80;
+    font-size: 40px;
+    margin: -30px auto 15px !important;
+    z-index: 50;
+}
+.testimonial-item {
+    margin-top: 40px;
+}
+#testimonials {
+    padding-top: 140px;
+}
+/* Ensure track stays horizontal */
+.testi-track {
+    display: flex;
+    gap: 40px;
+    will-change: transform;
+}
+
+/* Ensure all slides remain visible for sliding */
+.testimonial-item {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    opacity: .5;
+    transition: transform .4s ease, opacity .4s ease;
+}
+
+/* The CENTER highlighted card */
+.testimonial-item.center {
+    transform: translateY(-35px) scale(1.08);
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Fix quote circles always visible */
+.testimonial-quote-circle {
+    background: #fff !important;
+    z-index: 9999;
+}
+
+/* Add spacing under title */
+.testimonials-title {
+    margin-bottom: 80px !important;
+}
+/* Testimonial arrows */
+.testi-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 30;
+    background: #28509e;
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 22px;
+    display: none; /* hidden by default */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Show arrows ONLY on mobile */
+@media (max-width: 992px) {
+    .testi-arrow {
+        display: flex;
+    }
+    .testi-prev {
+        left: 10px;
+    }
+    .testi-next {
+        right: 10px;
     }
 }

@@ -1,80 +1,102 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // 1️⃣ REMOVE PREVIOUS BAD CLONES BEFORE ANYTHING ELSE
-    document.querySelectorAll(".testi-track > .testimonial-item").forEach(item => {
-        if (!item.querySelector(".testimonial-card")) item.remove();
-    });
-
-    // 2️⃣ NOW GET THE CLEAN ORIGINAL SLIDES
     const track = document.querySelector(".testi-track");
     const original = Array.from(document.querySelectorAll(".testimonial-item"));
-    const dots = document.querySelectorAll(".testi-dots li");
+    const dots = Array.from(document.querySelectorAll(".testi-dots li"));
 
-    let index = 3; // true center once clones added
+    const total = original.length;
+
+    // --- 1️⃣ CLONE BEFORE (last 3) + AFTER (first 3) ---
+    const clonesBefore = original.slice(-3).map(el => el.cloneNode(true));
+    const clonesAfter  = original.slice(0, 3).map(el => el.cloneNode(true));
+
+    clonesBefore.forEach(el => track.prepend(el));
+    clonesAfter.forEach(el => track.append(el));
+
+    // ALL SLIDES after cloning
+    const all = Array.from(document.querySelectorAll(".testimonial-item"));
+
+    let index = 3;  // first REAL slide
+    let itemWidth = 0;
+    const gap = 40;
     let auto;
 
-    // 3️⃣ CLONE FOR INFINITE LOOP
-    const clonesBefore = original.slice(-3).map(item => item.cloneNode(true));
-    const clonesAfter = original.slice(0, 3).map(item => item.cloneNode(true));
-
-    clonesBefore.forEach(cl => track.prepend(cl));
-    clonesAfter.forEach(cl => track.append(cl));
-
-    const all = Array.from(document.querySelectorAll(".testimonial-item"));
-    let slideWidth = 0;
-
-    // 4️⃣ UPDATE SIZES
-    function updateSizes() {
-        slideWidth = all[0].offsetWidth + 40;
-        track.style.transition = "none";
-        track.style.transform = `translateX(-${slideWidth * index}px)`;
+    /* --------------------------------------------------
+       ⭐ SHIFT FIX → ensures center slide is VISUALLY center
+       TRANSFORM = -(index * width) + width
+       -------------------------------------------------- */
+    function applyTransform() {
+        track.style.transform =
+            `translateX(calc(${-itemWidth * index}px + ${itemWidth}px))`;
     }
 
-    // 5️⃣ SET CENTER CARD
-    function setCenter() {
-        all.forEach(s => s.classList.remove("center"));
+    // Update slide width
+    function updateSizes() {
+        itemWidth = all[0].offsetWidth + gap;
+        track.style.transition = "none";
+        applyTransform();
+    }
+
+    // Highlight proper center + dots
+    function highlightCenter() {
+        all.forEach(el => el.classList.remove("center"));
+
+        const realIndex = (index - 3 + total) % total;
+
         all[index].classList.add("center");
 
-        dots.forEach(d => d.classList.remove("active"));
-        const realDot = (index - 3 + original.length) % original.length;
-        dots[realDot].classList.add("active");
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === realIndex);
+        });
     }
 
-    // 6️⃣ AUTOPLAY NEXT SLIDE
-    function moveToNext() {
+    // Move forward
+    function slideNext() {
         index++;
         track.style.transition = "0.6s ease";
-        track.style.transform = `translateX(-${slideWidth * index}px)`;
+        applyTransform();
 
         setTimeout(() => {
-            if (index >= all.length - 3) {
+            if (index === total + 3) {
+                // Jump to first real slide (no animation)
                 track.style.transition = "none";
                 index = 3;
-                track.style.transform = `translateX(-${slideWidth * index}px)`;
+                applyTransform();
             }
-            setCenter();
+            highlightCenter();
         }, 620);
     }
 
-    // 7️⃣ DOT CLICK
-    function moveToDot(i) {
+    // Move to a dot
+    function slideToDot(i) {
         index = i + 3;
         track.style.transition = "0.6s ease";
-        track.style.transform = `translateX(-${slideWidth * index}px)`;
-        setCenter();
+        applyTransform();
+        highlightCenter();
     }
 
-    dots.forEach(d => {
-        d.addEventListener("click", () => {
-            clearInterval(auto);
-            moveToDot(Number(d.dataset.index));
-            auto = setInterval(moveToNext, 3000);
+    // Dot click events
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+            slideToDot(i);
+            resetAuto();
         });
     });
 
-    // 8️⃣ INIT
-    updateSizes();
-    setCenter();
+    // Auto play loop
+    function startAuto() {
+        auto = setInterval(slideNext, 2500);
+    }
+    function resetAuto() {
+        clearInterval(auto);
+        startAuto();
+    }
+
+    // Window resize update
     window.addEventListener("resize", updateSizes);
-    auto = setInterval(moveToNext, 3000);
+
+    // INIT
+    updateSizes();
+    highlightCenter();
+    startAuto();
 });
