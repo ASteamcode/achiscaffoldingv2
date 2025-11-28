@@ -1,198 +1,100 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Achi Scaffolding — Blog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Achi Scaffolding — Blog</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-   <link rel="stylesheet" href="css/base.css">
-   <link rel="stylesheet" href="css/header.css">
-   <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/blog.css">
-
-
-  <!-- Embedded page CSS (paste into css/style.css if you prefer external file) -->
-  <style>
-:root{
-  --blue-700: #214f9b;
-  --blue-800: #274f9f;
-  --blue-900: #003c8f;
-  --accent: #ff8a00;
-  --muted: #4a5c7a;
-  --bg-odd: #f5f7fb;
-  --bg-even: #eef3fb;
-  --dot-inactive: #d6dde9;
-  --dot-active: var(--blue-800);
-  --max-container: 1200px;
-}
-
-/* Reset / base */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:"Open Sans", Arial, sans-serif;
-  color:#213247;
-  -webkit-font-smoothing:antialiased;
-}
-
-/* container */
-.container{width:90%;max-width:var(--max-container);margin:0 auto}
-
-/* Generic sections */
-.home-section{padding:60px 0;background-color:var(--bg-odd)}
-.home-section:nth-of-type(even){background-color:var(--bg-even)}
-
-.section-header{text-align:center;max-width:720px;margin:0 auto 35px}
-.section-header h2{font-family:"Rajdhani",sans-serif;font-size:30px;text-transform:uppercase;color:var(--blue-700);margin:0 0 8px}
-.section-header p{font-size:15px;color:var(--muted);margin:0}
-
-/* Buttons */
-.btn-primary{display:inline-block;padding:10px 28px;border-radius:999px;border:none;background-color:var(--blue-700);color:#fff;font-size:14px;font-family:"Rajdhani",sans-serif;text-transform:uppercase;letter-spacing:.05em;font-weight:600;cursor:pointer;transition:background-color .25s,transform .2s}
-.btn-primary:hover{background-color:#28509e;transform:translateY(-1px)}
-
-.btn-outline-blue{display:inline-flex;align-items:center;gap:6px;padding:10px 24px;border-radius:999px;border:2px solid var(--blue-700);background:transparent;color:var(--blue-700);font-family:"Rajdhani",sans-serif;text-transform:uppercase;font-weight:600;font-size:14px;letter-spacing:.05em;cursor:pointer;transition:background-color .25s,color .25s,transform .2s}
-.btn-outline-blue:hover{background:var(--blue-700);color:#fff}
-
-/* ABOUT: full-width layout (not inside .container) */
-.home-about{width:100%;margin:0;padding:0}
-.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;width:100%;max-width:100%;margin:0}
-.about-image{min-height:480px;background-size:cover;background-position:center;background-repeat:no-repeat}
-.about-panel{background-color:var(--blue-800);color:#fff;padding:56px 64px;display:flex;flex-direction:column;justify-content:center;position:relative}
-.about-panel-heading{font-family:"Rajdhani",sans-serif;font-weight:700;text-transform:uppercase;line-height:0.95;font-size:72px;margin:0;color:#fff}
-.about-panel-copy p{font-family:"Open Sans",sans-serif;color:rgba(255,255,255,.92);font-size:16px;line-height:1.6;max-width:640px;margin:0 0 8px}
-.btn-outline-white{display:inline-block;padding:10px 22px;border-radius:999px;border:2px solid rgba(255,255,255,.95);color:#fff;background:transparent;font-family:"Rajdhani",sans-serif;font-weight:600;font-size:13px;text-transform:uppercase;text-decoration:none}
-.about-panel::after{content:"";width:6px;height:64px;background:#1b3a73;position:absolute;right:24px;top:30px}
-
-/* VISION / MISSION */
-.about-main{padding:70px 0;background:#fff}
-.about-main .container{max-width:980px}
-.about-intro h1{font-family:"Rajdhani",sans-serif;color:var(--blue-700);font-size:34px;margin:0 0 12px}
-.about-intro p{color:var(--muted);font-size:15px;line-height:1.6}
-
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px}
-.card{background:#fff;border-radius:10px;padding:24px;box-shadow:0 8px 30px rgba(33,50,71,0.06);border:1px solid rgba(33,50,71,0.04)}
-.card h3{font-family:"Rajdhani",sans-serif;color:var(--blue-700);margin:0 0 8px}
-.card p{color:var(--muted);line-height:1.6;margin:0}
-
-/* small visual flourish */
-.muted-note{font-size:13px;color:var(--muted);margin-top:12px}
-
-/* Footer basics (kept minimal so it fits with your existing footer styles) */
-.site-footer{background:#102033;color:#fff;padding:40px 0}
-.footer-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;width:90%;max-width:var(--max-container);margin:0 auto}
-.footer-col h4{margin:0 0 10px;font-size:16px}
-
-/* Responsive */
-@media (max-width:992px){
-  .about-layout{grid-template-columns:1fr}
-  .grid-2{grid-template-columns:1fr}
-}
-@media (max-width:600px){
-  .about-panel{padding:32px 20px}
-  .about-panel-heading{font-size:40px}
-  .about-image{min-height:220px}
-  .footer-inner{grid-template-columns:1fr 1fr}
-}
-  </style>
-    <link rel="stylesheet" href="css/products.css" />
-    <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body class="blog-page">
+
 <div id="header"></div>
 
-
-<!-- Hero-like About panel (full width split) -->
-<section class="home-about" aria-label="About panel">
-  <div class="about-layout">
-    <div class="about-image" style="background-image:url('images/about.webp')" role="img" aria-label="Scaffolding image"></div>
-    <div class="about-panel">
-      <h2 class="about-panel-heading">30+ YEARS OF<br> SCAFFOLDING<br> EXPERIENCE</h2>
-      <div class="about-panel-copy">
-        <p>
-          Since its establishment in 1993 by engineer Barbar Achi, Achi Scaffolding has evolved into a reputable provider of expert scaffolding and formwork services in Lebanon. Our professional team takes immense pride in building a solid foundation of trust by delivering reliable and high-quality scaffold structures for diverse projects.
-        </p>
-        <a href="#about-main" class="btn-outline-white" style="margin-top:18px">Read our story</a>
-      </div>
-    </div>
-  </div>
+<!-- PAGE TITLE -->
+<section class="blog-header-title">
+    <h1>BLOG</h1>
 </section>
 
-<!-- Main about content (inside container) -->
-<section id="about-main" class="about-main">
-  <div class="container">
-    <div class="about-intro">
-      <h1>About Achi Scaffolding</h1>
-      <p>
-        Achi Scaffolding provides professional scaffolding, formwork and shoring solutions for commercial, residential and industrial projects across Lebanon and the region. We combine field experience with engineered solutions to deliver safe, reliable and cost-effective systems.
-      </p>
+<section class="other-articles-section">
+   
+
+    <div class="other-articles-grid">
+<!-- POST 1 — TODAY -->
+<article class="other-article-card" data-date-index="0">
+    <img src="images/blog/blog1.png" alt="Blog 1">
+
+    <div class="other-article-date auto-date">
+        <p class="day"></p>
+        <p class="month"></p>
     </div>
 
-    <div class="grid-2">
-      <article class="card" id="mission">
-        <h3>Our Mission</h3>
+    <div class="other-article-content">
+        <h3>The Evolution of Scaffolding in Lebanon: A Historical Perspective</h3>
         <p>
-          We specialize in comprehensive scaffolding services — from rental and installation to design and export of new and used construction equipment across the Middle East and Africa. Our mission is to provide engineered, safe and timely solutions that help clients deliver their projects on schedule.
+            This article explores the historical development of scaffolding in Lebanon, from traditional methods 
+            to modern engineered structures. It highlights key projects, technological advancements, and the 
+            essential role scaffolding plays in shaping Lebanon’s architectural landscape.
         </p>
-        <div class="muted-note">Operational excellence • Safety-first culture • Client-focused service</div>
-      </article>
+        <a href="blog-post-1.html">Read More</a>
+    </div>
+</article>
 
-      <article class="card" id="vision">
-        <h3>Our Vision</h3>
+<!-- POST 2 — YESTERDAY -->
+<article class="other-article-card" data-date-index="1">
+    <img src="images/blog/blog2.png" alt="Blog 2">
+
+    <div class="other-article-date auto-date">
+        <p class="day"></p>
+        <p class="month"></p>
+    </div>
+
+    <div class="other-article-content">
+        <h3>Scaffolding Safety Standards: Ensuring Construction Site Security in Lebanon</h3>
         <p>
-          To make scaffolding a symbol of innovation, sustainability and safety in the built environment. We aim to lead the industry by improving standards, investing in skilled crews and supplying modern systems that reduce risk and increase productivity.
+            Safety is essential in the construction industry. This article focuses on Lebanese scaffolding safety 
+            regulations, guidelines, and best practices. It explains equipment standards and measures companies 
+            take to protect workers and the public.
         </p>
-        <div class="muted-note">Future-ready scaffolding • Sustainable practices • Continuous improvement</div>
-      </article>
+        <a href="blog-post-2.html">Read More</a>
+    </div>
+</article>
+
+<!-- POST 3 — TWO DAYS AGO -->
+<article class="other-article-card" data-date-index="2">
+    <img src="images/blog/blog3.png" alt="Blog 3">
+
+    <div class="other-article-date auto-date">
+        <p class="day"></p>
+        <p class="month"></p>
     </div>
 
-    <div style="margin-top:34px;display:flex;gap:18px;flex-wrap:wrap;align-items:center">
-      <a href="contact.html" class="btn-primary">Get in touch</a>
-      <a href="projects.html" class="btn-outline-blue">See projects</a>
+    <div class="other-article-content">
+        <h3>Innovative Scaffolding Solutions for Lebanon's Unique Architectural Challenges</h3>
+        <p>
+            Lebanon’s diverse architectural styles and terrains require creative scaffolding systems. This article 
+            highlights innovative solutions and case studies showing how modern scaffolding adapts to Lebanon’s 
+            complex construction environments.
+        </p>
+        <a href="blog-post-3.html">Read More</a>
     </div>
+</article>
 
-  </div>
+
+    </div>
 </section>
 
-<!-- Footer -->
-<footer class="site-footer" role="contentinfo">
-  <div class="container footer-inner">
-    <div class="footer-col footer-brand">
-      <img src="images/ArchiScaffoldinglogo.png" alt="Achi Scaffolding" style="height:44px">
-    </div>
-    <div class="footer-col">
-      <h4>Home</h4>
-      <ul style="list-style:none;padding:0;margin:0">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="products.html">Products</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Our contacts</h4>
-      <ul style="list-style:none;padding:0;margin:0;color:rgba(255,255,255,.9)">
-        <li><i class="fa-solid fa-phone"></i> <a href="tel:+96103322811">+96103322811</a></li>
-        <li><i class="fa-regular fa-envelope"></i> <a href="mailto:achi.gr@hotmail.com">achi.gr@hotmail.com</a></li>
-        <li><i class="fa-solid fa-location-dot"></i> Lebanon</li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 class="follow-title">Follow us</h4>
-      <div class="footer-social" style="display:flex;gap:10px">
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
+<div id="footer"></div>
 
-    <script src="js/menu.js"></script>
-    <script src="js/clients-slider.js"></script>
-    <script src="js/loadHeader.js"></script>
-
+<script src="js/loadHeader.js"></script>
+<script src="js/blog-dates.js"></script>
+<script src="js/loadFooter.js"></script>
 </body>
 </html>

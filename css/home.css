@@ -519,39 +519,125 @@
 }
 
 
-/* ------------------------------------------------------------
-   CONTACT CTA
------------------------------------------------------------- */
+/* ============================================
+   CONTACT CTA — FINAL VERSION
+   ============================================ */
+
 .home-contact-cta {
-    background-color: #28509e;
+    background-color: #28509E;        /* exact blue from screenshot */
     color: #fff;
-    margin-top: 100px;
+    padding: 60px 0 40px;
+    margin-top: 120px;
 }
 
 .contact-inner {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
-    gap: 40px;
-    padding: 45px 20px;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+/* ===========================
+   LEFT SIDE — FORM
+=========================== */
+
+.contact-form-wrapper {
+    flex: 1 1 60%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 10px 20px;
+    padding: 14px 24px;
     background: transparent;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,.6);
-    color: #fff;
+    border-radius: 10px; /* matches screenshot */
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    color: #ffffffd9;
+    font-size: 16px;
+    outline: none;
 }
 
-.contact-submit {
-    margin-top: 20px;
-    background: #ff8e26;
-    border-radius: 20px;
-    padding: 10px 30px;
-    width: 50%;
+.contact-form textarea {
+    resize: vertical;
+    min-height: 160px;
 }
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #e2e6f0;
+}
+
+/* SEND BUTTON */
+.contact-submit {
+    margin-top: 15px;
+    background: #FF8E26;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 34px;
+    width: 130px;
+    text-align: center;
+    color: #fff;
+    font-family: "Rubik", sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.contact-submit:hover {
+    background: #ff9f33;
+}
+
+/* ===========================
+   RIGHT SIDE — “LET’S TALK!”
+=========================== */
+
+.contact-side-heading {
+    flex: 0 0 40%;
+    padding-top: 20px;
+    text-align: right;
+}
+
+.contact-side-heading h3 {
+    font-family: "Saira Stencil One", sans-serif;
+    font-size: 45px;
+    line-height: 1.1;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+    color: #ffffff;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 900px) {
+
+    .contact-inner {
+        flex-direction: column;
+        text-align: left;
+        gap: 30px;
+    }
+
+    .contact-side-heading {
+        display: none; /* matches screenshot - hidden on mobile */
+    }
+
+    .contact-form-wrapper {
+        width: 100%;
+    }
+}
+
 /* =============================
    TESTIMONIALS — FINAL VERSION
 ============================== */
@@ -805,4 +891,604 @@
     .testi-next {
         right: 10px;
     }
+}
+
+.enquiry-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-radius: 999px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(90deg, #214F9B, #25D366);
+    background-size: 300% 300%;
+    animation: colorShift 4s ease infinite;
+    transition: transform .25s ease;
+}
+
+.enquiry-btn:hover {
+    transform: translateY(-2px);
+}
+
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* ==========================================
+   HOME PAGE — BLOG SECTION (EXACT MATCH)
+========================================== */
+
+.home-blog {
+    padding: 60px 0 100px;
+    background: #f5f7fb; /* light background like screenshot */
+}
+
+/* BLOG title centered */
+.home-blog .blog-title {
+    text-align: center;
+    font-family: "Saira Stencil One", sans-serif;
+    font-size: 48px;
+    letter-spacing: 2px;
+    color: #214f9b;
+    text-transform: uppercase;
+    margin: 0 0 50px;
+}
+
+/* GRID WITH 3 CARDS */
+.home-blog .blog-grid-achi {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+}
+
+/* CARD WRAPPER */
+.home-blog .blog-card-achi {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    background: transparent;
+    padding-bottom: 0;
+}
+
+/* IMAGE */
+.home-blog .blog-image {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+    border-radius: 22px;
+}
+
+/* DATE BADGE */
+.home-blog .blog-date-badge {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    background: #214f9b;
+    color: #fff;
+    padding: 12px 18px;
+    width: 74px;
+    border-radius: 12px;
+    text-align: center;
+    z-index: 10;
+}
+
+.home-blog .blog-date-badge .day {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.home-blog .blog-date-badge .month {
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+/* TITLE BELOW IMAGE */
+.home-blog .blog-card-title {
+    text-align: center;
+    font-family: "Saira", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #103566;
+    margin: 14px 0 0;
+}
+
+/* READ MORE LINK */
+.home-blog .blog-readmore-btn {
+    font-family: "Saira", sans-serif;
+    font-weight: 600;
+    color: #214f9b;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.home-blog .blog-readmore-btn:hover {
+    color: #ff8a00;
+}
+
+/* READ ALL BUTTON */
+.home-blog .blog-readall-wrapper {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.home-blog .blog-readall-btn {
+    display: inline-block;
+    padding: 16px 48px;
+    border-radius: 10px;
+    background: #214f9b;
+    color: white;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.home-blog .blog-readall-btn:hover {
+    background: #ff8a00;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .home-blog .blog-grid-achi {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+}
+/* BLOG CARD — make the container relative so the date can sit on top */
+.home-blog .blog-card-achi {
+    position: relative;
+    border-radius: 10px;  
+    margin-top: 10px;;    /* match your card corners */
+    overflow: hidden;
+    gap:20px
+}
+
+/* DATE BADGE — bigger, less rounded, exact top-left corner */
+.home-blog .blog-date-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;              /* make it bigger */
+    height: 80px;             /* perfect square */
+    background: #214F9B;      /* your blue */
+    color: white;
+    border-radius: 10px;      /* LESS rounded */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rajdhani", sans-serif;
+    z-index: 10;
+}
+
+/* DAY number (bigger + bold like in screenshot) */
+.home-blog .blog-date-badge .day {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+/* MONTH (smaller spacing) */
+.home-blog .blog-date-badge .month {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 2px 0 0 0;
+    line-height: 1;
+}
+/* BLOG SECTION WRAPPER — full width centered */
+.home-blog .blog-container {
+    width: 90%;
+    max-width: 1500px;  /* bigger container */
+    margin: 0 auto;
+}
+
+/* BLOG GRID — make cards larger */
+.home-blog .blog-grid-achi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;                 /* bigger spacing between cards */
+    margin-top: 40px;
+}
+
+/* BLOG CARD — BIGGER SIZE */
+.home-blog .blog-card-achi {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+    height: 600px;             /* INCREASED height to match screenshot */
+}
+
+/* BLOG IMAGE — bigger & full top area */
+.home-blog .blog-card-achi .blog-image {
+    width: 100%;
+    height: 400px;             /* much taller image */
+    object-fit: cover;
+}
+
+/* TITLE BELOW IMAGE — bigger font */
+.home-blog .blog-card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #123;
+    margin: 18px 20px 0 20px;
+    font-family: "Rajdhani", sans-serif;
+}
+
+/* Read More */
+.home-blog .blog-readmore-btn {
+    display: inline-block;
+    margin: 15px 20px 0 20px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #214F9B;
+    text-decoration: none;
+    text-align: center;
+}
+
+.home-blog .blog-readmore-btn:hover {
+    text-decoration: underline;
+}
+
+/* DATE BADGE — keep as is (you already like it) */
+.home-blog .blog-date-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 82px;
+    height: 82px;
+    background: #214F9B;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rajdhani", sans-serif;
+    z-index: 10;
+}
+/* Image wrapper becomes a perfect centering container */
+.blog-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/* Center the hover button EXACTLY in the middle */
+.blog-hover-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 5;
+    transition: opacity .3s ease;
+}
+
+/* Button styling */
+.blog-hover-btn a {
+    background: #ff8a00;
+    color: #fff;
+    padding: 15px 34px;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: "Rajdhani", sans-serif;
+}
+
+/* Dark overlay on hover */
+.blog-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    border-radius: 20px;
+    transition: opacity .3s ease;
+}
+
+/* Hover effects */
+.simple-blog-card:hover .blog-hover-btn {
+    opacity: 1;
+}
+
+.simple-blog-card:hover .blog-image-overlay {
+    opacity: 1;
+}
+
+.simple-blog-card:hover .blog-image {
+    transform: scale(1.05);
+    filter: brightness(0.7);
+}
+
+/* Remove unintended spacing pushing the button down */
+.blog-card-achi {
+    padding: 0;
+    margin: 0;
+}
+.home-blog .blog-card-title {
+    margin: 12px 0;
+    padding: 0;
+
+    font-family: "Saira", sans-serif;   /* EXACT font */
+    font-weight: 700;                   /* EXACT weight */
+    font-size: 18px;                    /* EXACT size from inspect */
+    text-transform: capitalize;         /* EXACT style */
+
+    color: rgb(0, 58, 128);             /* EXACT blue (#003A80) */
+    line-height: 1.4;
+    white-space: pre-line;
+
+    transition: color .3s cubic-bezier(.4,0,.2,1);
+}
+
+/* Optional hover effect (same rules as inspect) */
+.home-blog .blog-card-title:hover {
+    color: #ff8a00; /* orange on hover – matches your website */
+}
+/* Reduce extra space inside the card */
+.home-blog .blog-card-achi {
+    padding-bottom: 20px !important;   /* was very large */
+}
+
+/* Reduce space under the title inside the card */
+.home-blog .blog-card-title {
+    margin-bottom: 10px !important;
+}
+/* Reduce space around the whole section */
+.home-blog {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+.blog-readall-wrapper {
+    margin-top: 20px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+/* Reduce extra white space inside the blog card */
+.home-blog .simple-blog-card {
+    padding-bottom: 10px !important;      /* reduce from default 40–60px */
+}
+
+/* Reduce space between image and title */
+.home-blog .blog-card-title {
+    margin-top: 12px !important;
+    margin-bottom: 6px !important;
+}
+
+/* Make the entire card height shrink to content */
+.home-blog .blog-card-achi {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto !important;
+}
+
+
+/* CONTACT CTA */
+.home-contact-cta {
+    background-color: #28509e;
+    color: #fff;
+    margin-top: 100px;
+}
+
+/* Layout */
+.contact-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LEFT form */
+.contact-form-wrapper {
+    flex: 1 1 60%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.6);
+    color: #fff;
+}
+
+/* RIGHT SIDE */
+.contact-side-heading {
+    flex: 1 1 40%;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.contact-side-heading h3 {
+    font-family: "Saira Stencil One", sans-serif;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+/* SEND BUTTON ON RIGHT */
+.contact-send-right {
+    margin-top: 10px;
+    padding: 12px 50px;
+    font-size: 18px;
+    border-radius: 25px;
+    background: #FF8A00;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.contact-send-right:hover {
+    background: #ffaa44;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .contact-inner {
+        flex-direction: column;
+    }
+
+    .contact-side-heading {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .contact-side-heading h3 {
+        margin-bottom: 20px;
+    }
+
+    .contact-send-right {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+.home-contact-cta {
+    background-color: #214f9b !important;
+    color: #fff;
+    margin-top: 100px;
+    padding-bottom: 0;
+}
+.site-footer {
+    background: #214f9b !important;
+    color: #fff;
+    padding: 40px 0 30px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    margin-top: 0;
+}
+.contact-footer-separator {
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.3);
+}
+.btn-about {
+    display: inline-block;
+    padding: 12px 30px;
+    text-align: center;
+    border-radius: 40px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+}
+
+.btn-about:hover {
+    background: #ff8e26;
+    border-color: #ff8e26;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 142, 38, 0.4);
+}
+.clients-slider .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/* LEFT ARROW */
+.clients-slider .arrow.prev {
+    left: -60px !important;
+}
+
+/* RIGHT ARROW */
+.clients-slider .arrow.next {
+    right: -60px !important;
+    left: auto !important;
+}
+/* ==========================
+   MOBILE CLIENTS SLIDER FIX
+   One full logo at a time + smooth transition
+========================== */
+@media (max-width: 768px) {
+
+    .slide-track-wrapper {
+        overflow: hidden;          /* Prevent cut-off logos */
+        width: 100%;
+    }
+
+    .slide-track {
+        display: flex;
+        transition: transform 0.6s ease-in-out; /* SMOOTH movement */
+    }
+
+    .client-logo {
+        min-width: 100%;           /* Show ONLY one logo fully */
+        max-width: 100%;
+        height: 140px;
+        object-fit: contain;
+        padding: 20px 0;
+    }
+
+    /* BEAUTIFUL mobile arrows */
+    .clients-slider .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+        background: white;
+        color: #214f9b;
+        font-size: 18px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        transition: all 0.25s ease;
+    }
+
+    .clients-slider .arrow:hover {
+        background: #214f9b;
+        color: white;
+        transform: translateY(-50%) scale(1.15);
+    }
+
+    .clients-slider .arrow.prev { left: 10px; }
+    .clients-slider .arrow.next { right: 10px; }
 }

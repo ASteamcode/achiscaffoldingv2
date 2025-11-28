@@ -1,96 +1,189 @@
 /* ============================================================
-   FOOTER.CSS — GLOBAL FOOTER STYLES ONLY
+   FOOTER — EXACT MATCH TO SCREENSHOT
 ============================================================ */
 
 .site-footer {
-    background: #28509e;
+    background: #214F9B;         /* same blue in screenshot */
     color: #fff;
-    padding: 40px 0 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
-    margin-top: 0;
+    padding: 60px 0 40px;
+    font-family: "Saira", sans-serif;
 }
 
-/* Footer layout */
+/* GRID LAYOUT */
 .footer-inner {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 60px;
     align-items: flex-start;
 }
 
-/* Logo column */
-.footer-brand .site-logo {
-    max-width: 180px;
+/* LOGO */
+.footer-brand img {
+    max-width: 170px;
     height: auto;
+    display: block;
 }
 
-/* Headings */
+/* SECTION TITLES */
 .footer-col h4,
 .footer-col .follow-title {
     font-family: "Saira Stencil One", sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: uppercase;
-    margin: 0 0 18px;
+    margin-bottom: 18px;
 }
 
-/* Lists */
+/* LINKS */
 .footer-col ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 .footer-col ul li {
-    margin-bottom: 8px;
-    font-family: "Saira", sans-serif;
-    font-size: 16px;
+    margin-bottom: 10px;
 }
 
-/* Links */
-.footer-col a {
-    color: #fff;
+.footer-col ul li a {
+    color: #ffffffd8;
+    font-size: 15px;
     text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.footer-col a:hover {
-    color: #ff8e26;
-}
-
-/* Contact icons spacing */
-.footer-contact li i {
-    margin-right: 8px;
-}
-
-/* Social icons row */
-.footer-social {
-    display: flex;
-    gap: 16px;
-}
-
-.footer-social a i {
-    font-size: 18px;
     transition: 0.2s ease;
 }
 
-.footer-social a:hover i {
-    color: #ff8e26;
+.footer-col ul li a:hover {
+    color: #FF8A00;
+}
+
+/* CONTACT LIST */
+.footer-contacts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contacts li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-contacts i {
+    font-size: 15px;
+}
+
+/* EMAIL INPUT */
+.footer-email-box {
+    width: 100%;
+    position: relative;
+}
+
+.footer-email-box input {
+    width: 100%;
+    padding: 10px 40px 10px 12px;
+    background: #1A468E;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
+    font-size: 14px;
+    color: #fff;
+    outline: none;
+}
+
+.footer-email-box input::placeholder {
+    color: #B8C5DF;
+}
+
+.footer-email-box button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* SOCIAL ICONS */
+.footer-social {
+    margin-top: 14px;
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 17px;
+    transition: 0.2s ease;
+}
+
+.footer-social a:hover {
+    color: #FF8A00;
 }
 
 /* ============================================================
    RESPONSIVE
 ============================================================ */
 
-@media (max-width: 992px) {
+@media (max-width: 1000px) {
     .footer-inner {
         grid-template-columns: 1fr 1fr;
+        gap: 40px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     .footer-inner {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
+
+    .footer-col h4 {
+        margin-top: 20px;
+    }
+}
+.footer-contact li i {
+    margin-right: 12px;   /* Increase spacing here */
+    font-size: 16px;
+    width: 20px;          /* Optional: makes icons aligned */
+    display: inline-block;
+}
+/* Apply exact heading style to footer titles */
+.footer-col h4,
+.footer-col .follow-title {
+    font-family: "Saira Stencil One", sans-serif;   /* font-sairaStencil */
+    color: #ffffff;                                 /* text-white */
+    font-weight: 600;                               /* font-[600] */
+    font-size: 20px;                                /* text-[20px] */
+    text-transform: uppercase;
+    letter-spacing: 1.1px;                          /* tracking-[1.1px] */
+    margin-bottom: 18px;
+}
+.footer-quicklinks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+}
+
+.footer-quicklinks-grid ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-quicklinks-grid li {
+    margin-bottom: 8px;
+}
+
+.footer-quicklinks-grid a {
+    color: #fff;
+    text-decoration: none;
+    font-family: "Saira", sans-serif;
+    font-size: 18px;
+    font-style: bold;
 }
