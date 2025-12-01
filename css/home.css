@@ -1389,3 +1389,121 @@
     .clients-slider .arrow.prev { left: 10px; }
     .clients-slider .arrow.next { right: 10px; }
 }
+@media (max-width: 992px) {
+
+    .home-about .about-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .home-about .about-image {
+        width: 100% !important;
+        height: 260px !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    .home-about .about-panel {
+        width: 100% !important;
+        padding: 40px 20px !important;
+        background: #214f9b !important;
+        color: white !important;
+        text-align: center !important;
+    }
+
+    .home-about .about-panel h2 {
+        font-size: 30px !important;
+        line-height: 1.3 !important;
+        font-weight: 700 !important;
+        margin-bottom: 18px !important;
+    }
+
+    .home-about .about-panel p {
+        font-size: 17px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 25px !important;
+        color: white !important;
+    }
+
+    .home-about .btn-about {
+        display: inline-block !important;
+        margin: 0 auto !important;
+        padding: 12px 24px !important;
+        font-size: 16px !important;
+    }
+
+    .home-about .about-panel::before,
+    .home-about .about-panel::after {
+        display: none !important;
+    }
+}
+/* Default slider (desktop stays as is) */
+.clients-slider {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slide-track-wrapper {
+    overflow: hidden;
+}
+
+.slide-track {
+    display: flex;
+    transition: transform .3s ease;
+}
+
+.client-logo {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    padding: 10px 16px;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+
+    .clients-slider .arrow {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #214f9b;
+        border: none;
+        color: white;
+        font-size: 28px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .clients-slider .arrow.prev {
+        left: 10px;
+    }
+
+    .clients-slider .arrow.next {
+        right: 10px;
+    }
+
+    .client-logo {
+        width: 180px;
+        padding: 10px;
+    }
+
+    .slide-track-wrapper {
+        overflow-x: hidden;
+    }
+}
+
+/* Hide arrows on desktop */
+@media (min-width: 769px) {
+    .clients-slider .arrow {
+        display: none;
+    }
+}

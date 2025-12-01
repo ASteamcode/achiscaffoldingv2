@@ -2,13 +2,7 @@ function initMobileMenu() {
   const navToggle = document.querySelector(".nav-toggle");
   const mobileMenu = document.querySelector(".mobile-menu");
   const mobileClose = document.querySelector(".mobile-close");
-
-  const mobileLinks = document.querySelectorAll(".mobile-menu .nav-links a");
-
-  if (!navToggle || !mobileMenu || !mobileClose) {
-    console.warn("Menu elements missing.");
-    return;
-  }
+  const mobileLinks = document.querySelectorAll(".mobile-menu a");
 
   navToggle.addEventListener("click", () => {
     mobileMenu.classList.add("open");
