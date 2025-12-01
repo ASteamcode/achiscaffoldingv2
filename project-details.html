@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Achi Scaffolding — Project Details</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Saira+Stencil+One&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/project-details.css" />
+</head>
+
+<body class="project-details-page">
+
+<div id="header"></div>
+
+
+<section class="project-hero">
+    <div class="project-hero-left">
+        <p class="breadcrumb">Projects</p>
+        <h1 class="project-title">Project 1</h1>
+    </div>
+
+    <div class="project-hero-right">
+        <img src="images/gallery/G1.webp" alt="Project Image" />
+    </div>
+</section>
+
+
+<section class="project-main">
+    <div class="project-text">
+        <h2 class="heading">Project Heading</h2>
+
+        <p>
+           Our scaffolding services offer expert solutions for safely accessing
+           and working on building facades. We specialize in the installation and
+           rental of high-quality, industry-compliant scaffolding systems
+           tailored to meet the specific requirements of facades.
+        </p>
+
+        <p>
+           With a keen understanding of the diverse needs of construction and
+           maintenance projects, our team ensures the precise installation of
+           scaffolding structures that provide a secure and stable platform for
+           work on various building exteriors. Whether it's for renovation,
+           maintenance, painting, or construction, our scaffolding solutions cater
+           to diverse project scopes.
+        </p>
+
+       
+        <div class="accordion">
+            <div class="acc-item">
+                <button class="acc-header">Collapsable <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="acc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            </div>
+
+            <div class="acc-item">
+                <button class="acc-header">Collapsable <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="acc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            </div>
+
+            <div class="acc-item">
+                <button class="acc-header">Collapsable <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="acc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            </div>
+
+            <div class="acc-item">
+                <button class="acc-header">Collapsable <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="acc-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-gallery">
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+    </div>
+</section>
+<section id="contactForm" class="home-contact-cta">
+    <div class="contact-inner">
+        <div class="contact-form-wrapper">
+           
+            <form class="contact-form">
+                <input id="name" name="name" type="text" placeholder="Name">
+                <input id="email" name="email" type="email" placeholder="Email">
+                <input id="phone" name="phone" type="text" placeholder="Phone">
+                <textarea id="message" name="message" rows="5" placeholder="Write something..."></textarea>
+
+            </form>
+        </div>
+
+        <div class="contact-side-heading">
+            <h3>LET’S TALK!</h3>
+            <button type="submit" class="contact-submit contact-send-right">
+                SEND
+            </button>
+        </div>
+    </div>
+</section>
+<div class="contact-footer-separator"></div>
+<div id="footer"></div>
+
+<script src="js/loadHeader.js"></script>
+<script src="js/loadFooter.js"></script>
+
+<script>
+    document.querySelectorAll(".acc-header").forEach(btn => {
+        btn.addEventListener("click", () => {
+            btn.classList.toggle("open");
+            btn.nextElementSibling.classList.toggle("show");
+        });
+    });
+</script>
+
+</body>
+</html>
