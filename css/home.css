@@ -1461,7 +1461,6 @@
     padding: 10px 16px;
 }
 
-/* MOBILE VIEW */
 @media (max-width: 768px) {
 
     .clients-slider .arrow {
@@ -1544,4 +1543,15 @@ body.home-page .header-separator {
     margin: 0 0 12px !important;
     color: #ffffff !important;
     letter-spacing: 1px;
+}
+
+
+.home-about h2 {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    color: #ffffff; /* Use your main blue color instead of white */
+    line-height: 1.2;
 }
