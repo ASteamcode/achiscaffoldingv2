@@ -380,3 +380,34 @@
     background: var(--blue-700);
     color: #fff;
 }
+.about-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+
+    margin: 0 0 12px !important;
+
+    color: #ffffff !important;   /* blue header color (change if needed) */
+    line-height: 1.2 !important;
+}
+.about-hero-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    text-align: center;
+    margin: 0 0 12px !important;
+
+ color: #003A80 !important;    line-height: 1.2 !important;
+}
+.about-subtitle {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 12px !important;
+    text-align: center;
+    color: #003A80 !important; /* same as other non-hero titles */
+    line-height: 1.2 !important;
+}

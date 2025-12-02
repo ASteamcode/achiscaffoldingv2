@@ -575,3 +575,14 @@ body.blog-post-page .main-nav {
     height: auto;
     object-fit: cover;
 }
+.details-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+
+    margin: 0 0 12px !important;
+
+    color: #ffffff !important; /* header blue */
+    line-height: 1.2 !important;
+}

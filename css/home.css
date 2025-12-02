@@ -1555,3 +1555,199 @@ body.home-page .header-separator {
     color: #ffffff; /* Use your main blue color instead of white */
     line-height: 1.2;
 }
+ 
+
+/* Perfect fixed 400px square blog images */
+.home-blog .blog-image {
+    width: 420px !important;
+    height: 420px !important;
+    object-fit: cover;
+    border-radius: 18px;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+}
+
+/* BLOG CARD – rectangular container under image */
+.home-blog .blog-card-achi {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    padding-bottom: 22px;
+    height: auto !important;   /* make card stretch naturally */
+}
+
+/* DATE BADGE */
+.home-blog .blog-date-badge {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 75px;
+    height: 75px;
+    background: #214F9B;
+    border-radius: 14px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.home-blog .blog-date-badge .day {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.home-blog .blog-date-badge .month {
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+/* BLOG TITLE */
+.home-blog .blog-card-title {
+    font-family: "Saira", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #103566;
+    margin: 18px 20px 0 20px;
+    text-align: left;
+}
+
+/* READ MORE BUTTON */
+.home-blog .blog-readmore-btn {
+    margin: 10px 20px 0 20px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #103566;
+    text-decoration: none;
+    display: inline-block;
+}
+/* Make BLOG section background white */
+.home-blog {
+    background: #ffffff !important;
+}
+.home-blog .blog-card-achi {
+    width: 420px;      /* image width + margins */
+    margin: 0 auto;    /* center card */
+}
+/* Center grid + equal spacing */
+.home-blog .blog-grid-achi {
+    width: 100%;
+    max-width: 1400px;      /* keeps grid centered */
+    margin: 0 auto;         /* centers whole group */
+    display: flex;
+    justify-content: center;
+    gap: 40px;              /* equal spacing between cards */
+}
+
+/* Ensure cards do not stretch */
+.home-blog .blog-card-achi {
+    width: 420px;           /* image 400px + 20px side margins */
+    margin: 0;              /* remove uneven auto margins */
+}
+/* Tighten space between blog image and title */
+.home-blog .blog-card-achi .blog-image {
+    display: block;
+    margin: 0 auto 4px auto !important;  /* only 4px below image */
+    padding: 0 !important;
+}
+
+.home-blog .blog-card-achi .blog-card-title {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+.home-services-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 12px !important;
+    color: #003A80 !important;      /* same as header blue */
+    text-align: center !important;  /* center title */
+}
+.home-clients-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 12px !important;
+    color: #003A80 !important;   /* same blue as header & services */
+    text-align: center !important;
+}
+.home-why-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 15px !important;
+    color: #ffffff !important;
+    text-align: center !important;
+    letter-spacing: 1px !important;
+}
+.whychoose-wrapper {
+    background: rgba(0,0,0,0.65) !important;
+}
+.whychoose-title-wrapper,
+.home-why-title {
+    position: relative;
+    z-index: 5 !important;
+    color: #ffffff !important;
+}
+.home-why-title {
+    color: rgba(255,255,255,1) !important;
+    mix-blend-mode: normal !important;
+    isolation: isolate !important;
+}
+.testimonials-section .testimonials-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 12px !important;
+    color: #003A80 !important; /* header blue */
+    text-align: center !important;
+    line-height: 1.2 !important;
+}
+.testimonials-section .testimonials-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+
+    /* 👉 Customize these */
+    margin-top: -30px !important;
+    margin-bottom: 30px !important;
+
+    color: #003A80 !important; /* header blue */
+    text-align: center !important;
+    line-height: 1.2 !important;
+}
+.home-blog-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+
+    color: #003A80 !important;   /* same header blue */
+
+    text-align: center !important;
+    line-height: 1.2 !important;
+
+    /* customize spacing */
+    margin-top: 40px !important;
+    margin-bottom: 25px !important;
+}
+.contact-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+
+    margin: 0 0 12px !important;
+
+    color: #ffffff !important; /* white for contact section */
+
+    line-height: 1.2 !important;
+}

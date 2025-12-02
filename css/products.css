@@ -237,3 +237,15 @@
         align-items: flex-start;
     }
 }
+.products-hero-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+
+    margin: 0 0 12px !important;
+
+    color: #003A80 !important; /* header blue */
+    line-height: 1.2 !important;
+    text-align: center !important;
+}

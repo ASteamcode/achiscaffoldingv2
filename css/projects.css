@@ -317,3 +317,43 @@
     height: 1px;
     background: white; 
 }
+.projects-hero-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    color: #ffffff !important;
+
+    text-align: left !important;
+
+    /* 👉 Move title up aggressively */
+    margin-top: -40px !important;  /* pull upward */
+    position: relative !important;
+    top: -20px !important;          /* pull even more upward */
+
+    margin-bottom: 12px !important;
+}
+.projects-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+
+    margin: 0 0 12px !important;
+
+    color: #003A80 !important; /* header blue */
+    text-align: center !important;
+    line-height: 1.2 !important;
+}
+.newsletter-title-big {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+
+    margin: 0 0 12px !important;
+
+    color: #ffffff !important;  /* white CTA title */
+    line-height: 1.2 !important;
+    text-align: center !important;
+}
