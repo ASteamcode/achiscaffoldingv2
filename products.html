@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -8,12 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-     <link rel="stylesheet" href="css/base.css">
-     <link rel="stylesheet" href="css/header.css">
-     <link rel="stylesheet" href="css/footer.css">
-     <link rel="stylesheet" href="css/products.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/products.css">
 </head>
 <body class="inner-page">
 <div id="header"></div>
@@ -34,6 +34,63 @@
     <div class="container">
         <div class="products-grid">
 
+            <article class="product-card product-card-3d reveal">
+                <div class="product-image product-image-3d">
+                    <model-viewer
+                        class="product-3d-viewer"
+                        src="images/products/double_coupler.glb"
+                        alt="Double Coupler 3D Component"
+                        camera-controls
+                        auto-rotate
+                        shadow-intensity="1"
+                        interaction-prompt="none"
+                        ar-modes="webxr scene-viewer quick-look">
+                    </model-viewer>
+                    <span class="product-3d-badge"><i class="fa-solid fa-vr-cardboard"></i> 3D VIEW</span>
+                </div>
+                <div class="product-body">
+                    <h3>Double Coupler 3D Component</h3>
+                    <p>High-strength double coupler for connecting scaffold tubes at 90° with precise alignment.</p>
+                    <ul class="product-specs">
+                        <li>3D interactive model</li>
+                        <li>Ideal for tube and fitting systems</li>
+                        <li>Optimized for heavy-duty connections</li>
+                    </ul>
+                    <div class="product-3d-meta">
+                        <span class="product-3d-tag">Rotate</span>
+                        <span class="product-3d-tag">Zoom</span>
+                        <span class="product-3d-tag">Inspect</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card product-card-3d reveal">
+                <div class="product-image product-image-3d">
+                    <model-viewer
+                        class="product-3d-viewer"
+                        src="images/products/double_coupler1.gltf"
+                        alt="Double Coupler VR Experience"
+                        camera-controls
+                        auto-rotate
+                        shadow-intensity="1"
+                        interaction-prompt="none"
+                        ar-modes="webxr scene-viewer quick-look">
+                    </model-viewer>
+                    <span class="product-3d-badge"><i class="fa-solid fa-arrows-rotate"></i> VR STYLE</span>
+                </div>
+                <div class="product-body">
+                    <h3>Double Coupler VR Experience</h3>
+                    <p>Explore the double coupler in a VR-style viewer to better understand geometry and contact points.</p>
+                    <ul class="product-specs">
+                        <li>Orbit-style VR navigation</li>
+                        <li>Full 360° inspection</li>
+                        <li>Clear view of tightening zones</li>
+                    </ul>
+                    <div class="product-3d-meta">
+                        <span class="product-3d-hint">Drag to rotate • Scroll to zoom</span>
+                    </div>
+                </div>
+            </article>
 
             <article class="product-card reveal">
                 <div class="product-image">
@@ -159,4 +216,3 @@
 <script src="js/loadFooter.js"></script>
 </body>
 </html>
-

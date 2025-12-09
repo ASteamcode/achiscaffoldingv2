@@ -1,4 +1,3 @@
-
 .page-hero {
     background-color: #f5f7fb;
     padding: 60px 0 40px;
@@ -31,6 +30,17 @@
     font-size: 15px;
 }
 
+.products-hero-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 12px !important;
+    color: #003A80 !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+}
+
 .products-section {
     padding: 40px 0 60px;
 }
@@ -43,7 +53,7 @@
 
 .product-card {
     background-color: #ffffff;
-    border-radius: 6px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
     display: flex;
@@ -65,16 +75,20 @@
     box-shadow: 0 18px 38px rgba(10, 33, 70, 0.25);
 }
 
+.product-card-3d {
+    border: 2px solid #e2e8f0;
+}
+
 .product-image {
     position: relative;
     overflow: hidden;
+    background-color: #f5f7fb;
 }
 
 .product-image img {
     width: 100%;
     height: 260px;
-    object-fit: cover;
-    transition: transform 0.35s ease, filter 0.35s ease;
+    object-fit: contain;
 }
 
 .product-image::after {
@@ -86,11 +100,7 @@
     height: 100%;
     background: linear-gradient(120deg, rgba(255,255,255,0), rgba(255,255,255,.45), rgba(255,255,255,0));
     transform: skewX(-18deg);
-}
-
-.product-card.active:hover .product-image img {
-    transform: scale(1.06);
-    filter: brightness(1.08);
+    pointer-events: none;
 }
 
 .product-card.active:hover .product-image::after {
@@ -98,7 +108,7 @@
 }
 
 @keyframes shine {
-    0%   { left: -100%; }
+    0% { left: -100%; }
     100% { left: 120%; }
 }
 
@@ -133,6 +143,7 @@
     font-size: 13px;
     color: #30415f;
     margin-bottom: 16px;
+    padding-left: 0;
 }
 
 .product-specs li {
@@ -166,7 +177,64 @@
     transform: translateY(-1px);
 }
 
+.product-image-3d {
+    background: radial-gradient(circle at top, #e5efff, #f5f7fb 70%);
+    height: 260px;
+    padding: 0;
+}
 
+.product-3d-viewer {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: transparent;
+}
+
+.product-3d-badge {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #f9fafb;
+    font-size: 11px;
+    font-family: "Rajdhani", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.product-3d-badge i {
+    font-size: 12px;
+}
+
+.product-3d-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+    justify-content: center;
+}
+
+.product-3d-tag {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #e2e8f0;
+    color: #30415f;
+    background-color: #f8fafc;
+}
+
+.product-3d-hint {
+    font-size: 11px;
+    color: #6b7280;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+}
 
 .cta-whatsapp {
     background-color: #214f9b;
@@ -219,8 +287,6 @@
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
 }
 
-
-
 @media (max-width: 992px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -236,16 +302,4 @@
         flex-direction: column;
         align-items: flex-start;
     }
-}
-.products-hero-title {
-    font-family: "Rajdhani", sans-serif !important;
-    font-size: 42px !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-
-    margin: 0 0 12px !important;
-
-    color: #003A80 !important; /* header blue */
-    line-height: 1.2 !important;
-    text-align: center !important;
 }
