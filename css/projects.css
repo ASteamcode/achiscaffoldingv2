@@ -367,73 +367,90 @@
     margin-bottom: 10px;
     object-fit: cover;
 }
-/* Fix Modal Position */
+/* === PROJECTS MODAL STYLES === */
+
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 10%; /* Move the modal closer to the top */
-    width: 100%;
-    height: auto;
-    max-height: 90%;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px 16px;
     overflow-y: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
 }
 
 .modal-content {
-    background-color: #fff;
+    position: relative;
     margin: 0 auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 800px;
-}
-
-.close-btn {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Gallery inside the Modal */
-.modal-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
-
-.modal-gallery img {
+    max-width: 1100px;
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
+    max-height: calc(100vh - 80px);
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px 32px 28px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
 }
 
-@media (max-width: 600px) {
-    .modal-gallery {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Adjust the modal header and title to make it look centered */
+.modal-content h3,
 .modal h3 {
     font-family: "Rajdhani", sans-serif;
     font-size: 32px;
     font-weight: 700;
     color: #214f9b;
-    margin-bottom: 15px;
+    margin: 0 40px 18px;
     text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    color: #222222;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000000;
+}
+
+/* Gallery inside the modal */
+.modal-gallery {
+    margin-top: 4px;
+    padding-right: 8px;
+    column-count: 3;
+    column-gap: 16px;
+    overflow-y: auto;
+}
+
+.modal-gallery img {
+    width: 100%;
+    height: auto;
+    margin: 0 0 16px;
+    display: block;
+    border-radius: 12px;
+    object-fit: contain;
+    background: #f5f5f5;
+    break-inside: avoid;
+}
+
+@media (max-width: 992px) {
+    .modal-gallery {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        max-height: calc(100vh - 40px);
+        padding: 18px 16px 20px;
+    }
+
+    .modal-gallery {
+        column-count: 1;
+    }
 }
