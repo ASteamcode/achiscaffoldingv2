@@ -2,26 +2,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerContainer = document.getElementById("header");
   if (!headerContainer) return;
 
-  const base = window.location.hostname.includes("github.io")
-    ? "/Achi_Internship"
-    : "";
-
-  fetch(`${base}/partials/header.html`)
-    .then(res => res.text())
+  fetch("partials/header.html")
+    .then(res => {
+      if (!res.ok) throw new Error("Header not found");
+      return res.text();
+    })
     .then(html => {
       headerContainer.innerHTML = html;
-
       initMobileMenu();
     })
     .catch(err => console.error("Header load failed:", err));
 });
 
-
 function initMobileMenu() {
   const navToggle = document.querySelector(".nav-toggle");
   const mobileMenu = document.querySelector(".mobile-menu");
   const mobileClose = document.querySelector(".mobile-close");
-
   const mobileLinks = document.querySelectorAll(".mobile-menu .nav-links a");
 
   if (!navToggle || !mobileMenu || !mobileClose) return;

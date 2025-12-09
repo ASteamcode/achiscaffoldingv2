@@ -2,12 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerContainer = document.getElementById("footer");
   if (!footerContainer) return;
 
-  const base = window.location.hostname.includes("github.io")
-    ? "/Achi_Internship"
-    : "";
-
-  fetch(`${base}/partials/footer.html`)
-    .then(res => res.text())
+  fetch("partials/footer.html")
+    .then(res => {
+      if (!res.ok) throw new Error("Footer not found");
+      return res.text();
+    })
     .then(html => {
       footerContainer.innerHTML = html;
     })
