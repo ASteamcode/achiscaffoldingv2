@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerContainer = document.getElementById("header");
   if (!headerContainer) return;
 
+  // STOP fetch on homepage if header is static
+  if (headerContainer.dataset.static === "true") return;
+
   fetch("partials/header.html")
     .then(res => {
       if (!res.ok) throw new Error("Header not found");
