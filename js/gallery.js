@@ -1,10 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    // ==========================
-    // 1. ALL GALLERY IMAGES
-    // ==========================
-    // Only browser-supported image formats: JPG / JPEG / WEBP / PNG
-    // All paths are relative to /images/gallery
     const IMAGES = [
         "images/gallery/0W0A1233.JPG",
         "images/gallery/1.jpg",
@@ -35,8 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "images/gallery/30.jpg",
         "images/gallery/31.jpg",
         "images/gallery/32.jpg",
-
-        // WebP originals
         "images/gallery/G1.webp",
         "images/gallery/G2.webp",
         "images/gallery/G3.webp",
@@ -57,8 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "images/gallery/G18.jpeg",
         "images/gallery/G19.jpeg",
         "images/gallery/G20.jpeg",
-
-        // Facebook / banner / misc project JPGs
         "images/gallery/124553811_724242481518321_2860198893114815692_n copy.jpg",
         "images/gallery/131335709_745181546091081_9030796893974946614_n.jpg",
         "images/gallery/20819369_135108873765021_8187137705964148355_o (1) copy.jpg",
@@ -85,8 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "images/gallery/rental-per-piecepg-1-819x1024.jpg",
         "images/gallery/scaffolding for indoor spaces.jpg",
         "images/gallery/Scaffolding installation for renewable energy projects.jpg",
-
-        // Random JPG project photos
         "images/gallery/1cbd4530-11ea-4edb-8fb4-3c35cd87dd71 2.JPG",
         "images/gallery/1f02ece1-0364-4505-8d01-85225135699a.JPG",
         "images/gallery/2a5ae51a-33c5-410e-b03e-f3fb48c69675.JPG",
@@ -109,8 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "images/gallery/E7AF2CAC-8AC8-43E3-A07E-A510C47FDD96 2.JPG",
         "images/gallery/ef0488ee-3200-4467-b15d-d0a35fc05c97.JPG",
         "images/gallery/f4b21edb-ec3b-482a-a269-2f778d546614.JPG",
-
-        // SDC series
         "images/gallery/SDC10232.JPG",
         "images/gallery/SDC10782.JPG",
         "images/gallery/SDC10964.JPG",
@@ -141,8 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "images/gallery/SDC19252.JPG",
         "images/gallery/SDC19539.JPG",
         "images/gallery/SDC19889.JPG",
-
-        // WhatsApp JPGs from site
         "images/gallery/WhatsApp Image 2022-11-24 at 9.29.49 PM (2).jpeg",
         "images/gallery/WhatsApp Image 2022-11-24 at 9.29.49 PM.jpeg",
         "images/gallery/WhatsApp Image 2022-11-24 at 9.29.50 PM (1) (1).jpeg",
@@ -152,14 +136,10 @@ document.addEventListener("DOMContentLoaded", function () {
         "images/gallery/WhatsApp Image 2023-01-05 at 9.28.18 AM (5) (1).jpeg",
         "images/gallery/WhatsApp Image 2023-01-05 at 9.28.21 AM.jpeg",
         "images/gallery/WhatsApp Image 2023-01-05 at 9.28.22 AM.jpeg",
-
-        // IMG_02xx etc
         "images/gallery/IMG_0272.jpg",
         "images/gallery/IMG_0273.jpg",
         "images/gallery/IMG_0274.jpg",
         "images/gallery/IMG_0275.jpg",
-
-        // IMG_217x etc
         "images/gallery/IMG_2170.JPG",
         "images/gallery/IMG_2172.JPG",
         "images/gallery/IMG_2173.JPG",
@@ -184,25 +164,16 @@ document.addEventListener("DOMContentLoaded", function () {
         "images/gallery/IMG_2196.JPG",
         "images/gallery/IMG_2197.JPG",
         "images/gallery/IMG_2199.JPG",
-
-        // Misc later jpgs
         "images/gallery/IMG_5889.JPG",
         "images/gallery/IMG_5891.JPG",
-
-        // PNGs from “Centre sofil.zip - x.PNG”
         "images/gallery/Centre sofil.zip - 9.PNG",
         "images/gallery/Centre sofil.zip - 10.PNG",
         "images/gallery/Centre sofil.zip - 11.PNG",
-
-        // iOS date JPGs
         "images/gallery/20230912_165441000_iOS.jpg",
         "images/gallery/20230918_132318003_iOS.jpg",
         "images/gallery/20230918_132318522_iOS.jpg"
     ];
 
-    // ==========================
-    // 2. BASIC DOM HOOKS
-    // ==========================
     const grid = document.getElementById("galleryGrid");
     const paginationWrapper = document.querySelector(".gallery-pagination");
     const pageNumbersContainer = document.querySelector(".gallery-page-numbers");
@@ -210,24 +181,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextBtn = document.querySelector(".gallery-page-btn.next");
 
     const lightbox = document.getElementById("gallery-lightbox");
-    const lightboxImg = lightbox.querySelector("img");
-    const lightboxClose = lightbox.querySelector(".lightbox-close");
-    const lightboxBackdrop = lightbox.querySelector(".lightbox-backdrop");
+    const lightboxImg = lightbox ? lightbox.querySelector("img") : null;
+    const lightboxClose = lightbox ? lightbox.querySelector(".lightbox-close") : null;
+    const lightboxBackdrop = lightbox ? lightbox.querySelector(".lightbox-backdrop") : null;
 
-    // ==========================
-    // 3. PAGINATION SETUP
-    // ==========================
     const PER_PAGE = 39;
     let currentPage = 1;
     const totalPages = Math.ceil(IMAGES.length / PER_PAGE);
 
-    // ==========================
-    // 4. RENDER A PAGE
-    // ==========================
     function renderPage(page) {
         currentPage = page;
-
-        // Clear current grid
         grid.innerHTML = "";
 
         const startIndex = (page - 1) * PER_PAGE;
@@ -240,10 +203,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const img = document.createElement("img");
             img.src = src;
-            img.loading = "lazy";
             img.alt = "Project image " + (startIndex + idx + 1);
 
-            // click -> lightbox
             img.addEventListener("click", () => {
                 openLightbox(src, img.alt);
             });
@@ -256,9 +217,6 @@ document.addEventListener("DOMContentLoaded", function () {
         renderPageNumbers();
     }
 
-    // ==========================
-    // 5. PAGINATION BUTTON STATES
-    // ==========================
     function updatePaginationButtons() {
         if (!prevBtn || !nextBtn) return;
         prevBtn.disabled = currentPage === 1;
@@ -295,9 +253,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.scrollTo({ top, behavior: "smooth" });
     }
 
-    // ==========================
-    // 6. PREV / NEXT HANDLERS
-    // ==========================
     if (prevBtn) {
         prevBtn.addEventListener("click", () => {
             if (currentPage > 1) {
@@ -316,18 +271,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================
-    // 7. LIGHTBOX LOGIC
-    // ==========================
     function openLightbox(src, alt) {
-        if (!lightbox) return;
+        if (!lightbox || !lightboxImg) return;
         lightboxImg.src = src;
         lightboxImg.alt = alt || "Project image";
         lightbox.classList.add("open");
     }
 
     function closeLightbox() {
-        if (!lightbox) return;
+        if (!lightbox || !lightboxImg) return;
         lightbox.classList.remove("open");
         lightboxImg.src = "";
         lightboxImg.alt = "";
@@ -341,15 +293,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && lightbox.classList.contains("open")) {
+        if (lightbox && e.key === "Escape" && lightbox.classList.contains("open")) {
             closeLightbox();
         }
     });
 
-    // ==========================
-    // 8. INITIAL RENDER
-    // ==========================
-    if (IMAGES.length > 0) {
+    if (IMAGES.length > 0 && grid) {
         renderPage(1);
     }
 });
