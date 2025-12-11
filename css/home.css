@@ -2102,3 +2102,68 @@ body.home-page .main-nav {
         font-size: 16px;
     }
 }
+/* CONTACT SECTION – MOBILE LAYOUT */
+@media (max-width: 768px) {
+
+  /* Make section a positioning context and leave room for button */
+  .home-contact-cta {
+      position: relative;
+      padding: 32px 16px 90px; /* extra bottom padding for the button */
+  }
+
+  .home-contact-cta .contact-inner {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+  }
+
+  /* Show title normally at the top */
+  .home-contact-cta .contact-side-heading {
+      display: block !important;
+      order: 0;
+      width: 100%;
+      text-align: left;
+  }
+
+  .home-contact-cta .contact-title {
+      display: block !important;
+      font-size: 22px;
+      line-height: 1.2;
+      margin: 0 0 8px;
+      text-align: center;
+  }
+
+  /* Form comes under the title */
+  .home-contact-cta .contact-form-wrapper {
+      order: 1;
+      width: 100%;
+  }
+
+  .home-contact-cta .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .home-contact-cta .contact-form input,
+  .home-contact-cta .contact-form textarea {
+      width: 100%;
+  }
+
+  /* SEND button: centered and BELOW the inputs */
+  .home-contact-cta .contact-submit {
+      display: block !important;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 24px;
+
+      width: 70%;
+      max-width: 260px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-align: center;
+  }
+}
