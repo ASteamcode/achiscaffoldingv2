@@ -5,45 +5,63 @@
     padding: 0 20px;
 }
 
-.service-hero {
-    background-color: #004a97;
-    color: #ffffff;
-    padding: 30px 0;
+
+.service-hero,
+.service-hero.details-hero {
+    width: 100%;
+    background: #214f9b;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-.service-hero-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    align-items: center;
-    gap: 40px;
-}
-
-.service-hero-text h1 {
-    font-size: 2.4rem;
-    line-height: 1.3;
-    font-weight: 700;
+.hero-left {
+    width: 50%;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .service-label {
-    font-size: 0.9rem;
+    font-size: 15px;
+    color: #ffffffcc;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 12px;
-    opacity: 0.9;
+    margin-bottom: 14px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
 }
 
-.service-hero-image-wrapper {
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+.details-title {
+    font-family: "Rajdhani", sans-serif !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 12px !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+    max-width: 90%;
 }
 
-.service-hero-image {
-    display: block;
+.hero-right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-right img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0;
 }
+
 
 .service-content {
     background-color: #f5f7fb;
@@ -60,10 +78,6 @@
 
 .service-section-grid:last-of-type {
     margin-bottom: 0;
-}
-
-.service-section-grid-reverse {
-    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1.02fr);
 }
 
 .service-media-card {
@@ -112,6 +126,7 @@
 }
 
 .service-text-card p {
+    margin-top: 30px;
     font-size: 0.98rem;
     line-height: 1.7;
     color: #4a5467;
@@ -122,30 +137,30 @@
     margin-bottom: 0;
 }
 
-@media (max-width: 1200px) {
-    .service-hero-text h1 {
-        font-size: 2.1rem;
-    }
-}
-
 @media (max-width: 992px) {
-    .service-hero {
-        padding: 24px 0;
+    .service-hero,
+    .service-hero.details-hero {
+        flex-direction: column;
     }
 
-    .service-hero-layout {
+    .hero-left,
+    .hero-right {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-right {
+        margin-top: 20px;
+    }
+
+    .hero-right img {
+        height: auto;
+    }
+
+    .service-section-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 26px;
-    }
-
-    .service-section-grid,
-    .service-section-grid-reverse {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 26px;
-    }
-
-    .service-section-grid-reverse .service-text-card {
-        order: -1;
     }
 
     .service-content {
@@ -154,12 +169,13 @@
 }
 
 @media (max-width: 600px) {
-    .service-hero {
-        padding: 20px 0;
+    .details-title {
+        font-size: 32px !important;
     }
 
-    .service-hero-text h1 {
-        font-size: 1.8rem;
+    .hero-left {
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .service-text-card {
@@ -169,4 +185,39 @@
     .service-media-card {
         padding: 14px;
     }
+}
+
+.other-services-btn {
+    display: inline-block;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-left: 140px;  
+    padding: 12px 28px;
+    background: #214f9b;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: 0.25s ease-in-out;
+    border: 2px solid #214f9b;
+}
+
+.other-services-btn:hover {
+    background: #ffffff;
+    color: #214f9b !important;
+    border-color: #214f9b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.hero-right img {
+    width: 100%;
+    height: 500px;       
+    object-fit: cover;   
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important; 
 }
