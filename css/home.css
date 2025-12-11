@@ -1899,3 +1899,108 @@ body.home-page .main-nav {
     border-top: none !important;
     box-shadow: none !important;
 }
+
+
+/* ============================
+   MOBILE TESTIMONIAL FIX
+   Swap stars & picture positions
+   ============================ */
+@media (max-width: 768px) {
+
+    /* Put picture row ABOVE the rating + text */
+    .testimonial-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Wrapper with picture + View More stays first */
+    .testimonial-thumb-wrapper {
+        order: 1;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    /* Rating moves below the picture */
+    .testimonial-rating {
+        order: 2;
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    /* Text stays under rating */
+    .testimonial-text {
+        order: 3;
+    }
+
+    /* Bigger rounded-square picture */
+    .testimonial-thumb {
+        width: 90px;
+        height: 90px;
+        border-radius: 18px;     /* rounded square */
+        object-fit: cover;
+    }
+
+    .testimonial-viewmore-btn {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Hide overflow & show only one review */
+    .testimonials-slider {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .testi-track-wrapper {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    /* Force 1 testimonial per slide */
+    .testi-track {
+        display: flex !important;
+        transition: transform 0.4s ease;
+    }
+
+    .testimonial-item {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+        padding: 0 16px;
+    }
+}
+/* MOBILE – show exactly ONE testimonial per slide */
+@media (max-width: 768px) {
+    .testimonials-slider {
+        overflow: hidden;
+        padding: 0;              /* no side padding on container */
+    }
+
+    .testi-track-wrapper {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .testi-track {
+        display: flex;
+    }
+
+    /* Each slide = 100% of slider width */
+    .testimonial-item {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;          /* important: no extra width */
+        box-sizing: border-box;
+    }
+
+    /* Add spacing INSIDE the card instead of on the slide */
+    .testimonial-card {
+        margin: 0 16px;
+    }
+}
