@@ -64,9 +64,10 @@
 
 
 .service-content {
-    background-color: #f5f7fb;
+    background-color: #ffffff;
     padding: 40px 0 60px;
 }
+
 
 .service-section-grid {
     display: grid;
@@ -220,4 +221,13 @@
     margin: 0 !important;
     padding: 0 !important;
     border-radius: 0 !important; 
+}
+body.service-details-page {
+    background-color: #ffffff !important;
+}
+
+body.service-details-page main,
+body.service-details-page .services-section,
+body.service-details-page .service-details-section {
+    background-color: #ffffff !important;
 }
