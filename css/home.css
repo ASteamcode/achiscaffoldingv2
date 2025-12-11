@@ -2004,3 +2004,101 @@ body.home-page .main-nav {
         margin: 0 16px;
     }
 }
+@media (max-width: 768px) {
+
+    /* --- BLOG GRID --- */
+    .blog-grid-achi {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .blog-card-achi {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        position: relative;
+    }
+
+    .blog-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 14px;
+    }
+
+    .blog-date-badge {
+        top: 12px;
+        left: 12px;
+        transform: scale(0.9);
+    }
+
+    /* --- TITLE --- */
+    .blog-card-title {
+        font-size: 18px;
+        line-height: 1.45;
+        margin: 14px 0;
+        padding: 0 12px;
+        text-align: center;
+        order: 1;
+    }
+
+    /* --- ORDER CORRECTION: Image → Title → Button --- */
+    .simple-blog-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .simple-blog-card .blog-image {
+        order: 0;
+        width: 100%;
+    }
+
+    .simple-blog-card .blog-card-title {
+        order: 1;
+    }
+
+    /* --- BUTTON (centered + always visible) --- */
+    .simple-blog-card .blog-hover-btn {
+        order: 2;
+        position: static !important;
+        opacity: 1 !important;
+        transform: none !important;
+        margin-top: 8px;
+        display: flex !important;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .simple-blog-card .blog-hover-btn a {
+        display: inline-block;
+        padding: 12px 26px;
+        font-size: 15px;
+        border-radius: 8px;
+        background: #214f9b;
+        color: #fff !important;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: "Rajdhani", sans-serif;
+        transition: 0.2s ease-in-out;
+    }
+
+    /* On click → orange */
+    .simple-blog-card .blog-hover-btn a:active {
+        background: #ff8a00 !important;
+        transform: scale(0.96);
+    }
+
+    /* --- READ ALL BUTTON --- */
+    .blog-readall-wrapper {
+        margin-top: 32px;
+        text-align: center;
+    }
+
+    .blog-readall-btn {
+        padding: 12px 28px;
+        font-size: 16px;
+    }
+}
