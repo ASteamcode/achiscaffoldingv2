@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const track = document.querySelector(".testi-track");
     const original = Array.from(document.querySelectorAll(".testimonial-item"));
     const dots = Array.from(document.querySelectorAll(".testi-dots li"));
+    const prevBtn = document.querySelector(".testi-prev");
+    const nextBtn = document.querySelector(".testi-next");
 
     const total = original.length;
 
@@ -19,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const gap = 40;
     let auto;
 
-    
     function applyTransform() {
         track.style.transform =
             `translateX(calc(${-itemWidth * index}px + ${itemWidth}px))`;
@@ -58,6 +59,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 620);
     }
 
+    function slidePrev() {
+        index--;
+        track.style.transition = "0.6s ease";
+        applyTransform();
+
+        setTimeout(() => {
+            if (index === 2) {
+                track.style.transition = "none";
+                index = total + 2;
+                applyTransform();
+            }
+            highlightCenter();
+        }, 620);
+    }
+
     function slideToDot(i) {
         index = i + 3;
         track.style.transition = "0.6s ease";
@@ -78,6 +94,30 @@ document.addEventListener("DOMContentLoaded", () => {
     function resetAuto() {
         clearInterval(auto);
         startAuto();
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            slideNext();
+            resetAuto();
+        });
+        nextBtn.addEventListener("touchend", (e) => {
+            e.preventDefault();
+            slideNext();
+            resetAuto();
+        }, { passive: false });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+            slidePrev();
+            resetAuto();
+        });
+        prevBtn.addEventListener("touchend", (e) => {
+            e.preventDefault();
+            slidePrev();
+            resetAuto();
+        }, { passive: false });
     }
 
     window.addEventListener("resize", updateSizes);
