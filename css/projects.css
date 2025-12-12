@@ -454,3 +454,39 @@
         column-count: 1;
     }
 }
+@media (max-width: 768px) {
+  .project-card .view-more {
+    display: block;
+    margin: 16px auto 0 auto;
+    text-align: center;
+    width: fit-content;
+  }
+}
+@media (max-width: 768px) {
+
+  /* Email input */
+  .newsletter-form input.email {
+    width: 90% !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  /* Button width fix */
+  .newsletter-form button {
+    width: 30% !important;         /* << smaller width */
+    max-width: 200px !important;   /* << prevents it from being too wide */
+    margin: 12px auto 0 auto !important; /* center it */
+
+    padding-top:5px !important;
+    padding-bottom: 5px !important;
+    padding-left: 5px !important;
+    padding-right: 5px!important;
+    height: auto !important;
+    letter-spacing: 1px;
+    text-align: center !important;
+    font-size: 14px !important;
+    border-radius:600px !important;
+    display: block !important;
+  }
+}
+
