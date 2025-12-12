@@ -305,3 +305,15 @@
     text-align: center !important;
     line-height: 1.2 !important;
 }
+@media (max-width: 1024px) {
+  .service-content {
+    text-align: left;
+  }
+
+  .service-btn {
+    display: block;
+    margin: 16px auto 0 auto; /* centers the button */
+    width: fit-content;       /* prevents full width */
+    text-align: center;
+  }
+}
