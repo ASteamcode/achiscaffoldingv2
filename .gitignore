@@ -1,0 +1,7 @@
+# Ignore videos (too large for GitHub)
+*.MOV
+*.mov
+*.mp4
+
+# System files
+.DS_Store
