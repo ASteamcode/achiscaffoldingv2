@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Components & Reusable Parts
 Header & Footer
 Stored in /partials/
@@ -33,3 +34,6 @@ GitHub Pages will auto-update the live version
 
  Live Link
 https://achi-scaffolding.github.io/
+=======
+# achiscaffoldingv2
+>>>>>>> 241a2870767f2778697ea3a5290e789ad24026bf
